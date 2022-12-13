@@ -128,6 +128,7 @@ def re_stock():
                     with open("inventory.txt", "a+") as update_file:
                         for shoe in shoe_list:
                             update_file.write(f"\n{shoe.__str__()}")
+                    update_file.close()
                     break
                 except ValueError:   # If the user does not enter a valid number receive an error
                     print("\nOops! That was not a valid number, try again!")
@@ -135,8 +136,7 @@ def re_stock():
         elif re_stock_option == "no":    # loop breaks if they choose not to add stock
             break
         else:   # loops again if they don't put a valid option
-            print("Sorry, this is not a valid option. Try again.\n")
-    update_file.close()
+            print("Sorry, this is not a valid option. Try again.\n"
 
 
 def search_shoe():
